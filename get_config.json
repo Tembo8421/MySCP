@@ -1,0 +1,9 @@
+{
+    "source_files":[
+        "/root/async.sh",
+        "/root/light_gw_server.sh"
+    ],
+    "source_folders":[
+        "/root/otaConfigFile"
+    ]
+}
