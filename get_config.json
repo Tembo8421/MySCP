@@ -1,9 +1,8 @@
 {
     "source_files":[
-        "/root/async.sh",
-        "/root/light_gw_server.sh"
+        "/bin/ipcalc.sh"
     ],
     "source_folders":[
-        "/root/otaConfigFile"
+        "/root"
     ]
 }
