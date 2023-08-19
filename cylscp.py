@@ -110,27 +110,29 @@ def main():
 
     config_dir = os.path.dirname(config_abs)
     files_list = []
-    for file in config.get("source_files"):
-        if args.do_put is True:
-            file_abs = file
-            if os.path.isabs(file_abs) is False:
-                file_abs = os.path.join(config_dir, file) 
-            files_list.append(file_abs)
-        else:
-            files_list.append(file)
+    if config.get("source_files") is not None:
+        for file in config.get("source_files"):
+            if args.do_put is True:
+                file_abs = file
+                if os.path.isabs(file_abs) is False:
+                    file_abs = os.path.join(config_dir, file) 
+                files_list.append(file_abs)
+            else:
+                files_list.append(file)
 
     msg = "\n\t".join(files_list)
     mylogger.info(f'Files List:\n\t{msg}')
 
     folders_list = []
-    for folder in config.get("source_folders"):
-        if args.do_put is True:
-            folder_abs = folder
-            if os.path.isabs(folder_abs) is False:
-                folder_abs = os.path.join(config_dir, folder)
-            folders_list.append(folder_abs)
-        else:
-            folders_list.append(folder)
+    if config.get("source_folders") is not None:
+        for folder in config.get("source_folders"):
+            if args.do_put is True:
+                folder_abs = folder
+                if os.path.isabs(folder_abs) is False:
+                    folder_abs = os.path.join(config_dir, folder)
+                folders_list.append(folder_abs)
+            else:
+                folders_list.append(folder)
 
     msg = "\n\t".join(folders_list)
     mylogger.info(f'Folders List:\n\t{msg}')
